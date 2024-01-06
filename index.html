@@ -6,6 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h2>Add Item</h2>
+    <form id="addItemForm">
+        <input type="text" id="addName" placeholder="Name">
+        <input type="text" id="addCode" placeholder="Code">
+        <input type="text" id="addItem" placeholder="Item">
+        <button id="test" type="button">Add Item</button>
+    </form>
+
+    <h2>Remove Item</h2>
+    <form id="removeItemForm">
+        <input type="text" id="removeName" placeholder="Name">
+        <input type="text" id="removeCode" placeholder="Code">
+        <input type="text" id="removeItem" placeholder="Item">
+        <button type="button" onclick="removeItem(document.getElementById('removeName').value, document.getElementById('removeCode').value, document.getElementById('removeItem').value)">Remove Item</button>
+    </form>
+
+    <button onclick="window.location.href = 'itemlist.html';">Open Item List</button>
+    <script src="inventory.js"></script>
 </body>
 </html>
