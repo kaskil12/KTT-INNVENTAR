@@ -1,5 +1,6 @@
 // Create an empty inventoryarray array
 let inventoryarray = [];
+ 
 
 // Function to add an item to the inventoryarray
 function addItem(name, code, item) {
