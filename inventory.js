@@ -1,23 +1,29 @@
 // Create an empty inventoryarray array
 let inventoryarray = [];
- 
+if (localStorage.getItem("inventoryarray") != null) {
+    let items = localStorage.getItem('inventoryarray').split(';');
+    items.forEach(item => {
+        inventoryarray.push(item.split(','));
+    });
+}
 
 // Function to add an item to the inventoryarray
 function addItem(name, code, item) {
     inventoryarray.push([name, code, item]);
-    console.log(inventoryarray);
-    console.log(inventoryarray[inventoryarray.length - 1]);
     localStorage.clear();
     inventoryarray.forEach(element => {
-        console.log(element);
-        if(inventoryarray[inventoryarray.length - 1] == element){
-            console.log("1")
+        if (inventoryarray[inventoryarray.length - 1] == element) {
             if (localStorage.getItem("inventoryarray") == null) {
                 localStorage.setItem("inventoryarray", element);
-            }   
-            localStorage.setItem("inventoryarray",localStorage.getItem("inventoryarray") + "," + element);
-        }else{
-            localStorage.setItem("inventoryarray", localStorage.getItem("inventoryarray") + "," + element + ";");
+            } else {
+                localStorage.setItem("inventoryarray",localStorage.getItem("inventoryarray") + element);
+            }
+        } else {
+            if (localStorage.getItem("inventoryarray") == null) {
+                localStorage.setItem("inventoryarray", element + ";");
+            } else {
+                localStorage.setItem("inventoryarray", localStorage.getItem("inventoryarray") + element + ";");
+            }
         }
     });
     console.log(localStorage.getItem("inventoryarray"));
@@ -38,4 +44,11 @@ function removeItem(name, code, item) {
             break;
         }
     }
+}
+try {
+    document.getElementById("rmItem").addEventListener("click", () => {
+        removeItem(document.getElementById('removeName').value, document.getElementById('removeCode').value, document.getElementById('removeItem').value);
+    });
+}catch(e){
+    console.log(e);
 }
