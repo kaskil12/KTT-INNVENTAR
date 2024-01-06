@@ -9,7 +9,9 @@ if (localStorage.getItem("inventoryarray") != null) {
 
 // Function to add an item to the inventoryarray
 function addItem(name, code, item) {
-    inventoryarray.push([name, code, item]);
+    if (name != "" && code != "" && item != "") {
+        inventoryarray.push([name, code, item]);
+    }
     localStorage.clear();
     inventoryarray.forEach(element => {
         if (inventoryarray[inventoryarray.length - 1] == element) {
@@ -41,6 +43,7 @@ function removeItem(name, code, item) {
         if (inventoryarray[i][0] == name && inventoryarray[i][1] == code && inventoryarray[i][2] == item) {
             inventoryarray.splice(i, 1);
             console.log(inventoryarray);
+            addItem("", "", "");
             break;
         }
     }
