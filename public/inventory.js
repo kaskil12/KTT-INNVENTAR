@@ -59,3 +59,11 @@ try {
 }catch(e){
     console.log(e);
 }
+try {
+    document.getElementById("test1").addEventListener("click", async () => {
+        const response = await fetch('/test');
+        console.log(await response.json());
+    });
+}catch(e){
+    console.log(e);
+}
