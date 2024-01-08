@@ -6,7 +6,7 @@ const Utstyr = require("./models/Utstyr.js");
 Utstyr.init(sequelizeDB);
 Utstyr.sync({force: true});
 
-
+app.use(express.json());
 app.use(express.static('public'))
  
 app.get('/test', async (req, res) => {
