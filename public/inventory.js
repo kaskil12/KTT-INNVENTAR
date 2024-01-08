@@ -1,4 +1,3 @@
-// Create an empty inventoryarray array
 let inventoryarray = [];
 if (localStorage.getItem("inventoryarray") != null) {
     let items = localStorage.getItem('inventoryarray').split(';');
@@ -7,32 +6,26 @@ if (localStorage.getItem("inventoryarray") != null) {
     });
 }
 
-// Function to add an item to the inventoryarray
-function addItem(name, code, item) {
+async function addItem(name, code, item) {
+    console.log(name, code, item);
     if (name != "" && code != "" && item != "") {
-        inventoryarray.push([name, code, item]);
+        let cum = await fetch('/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                name: name,
+                code: code,
+                item: item
+            }),
+        })
+        // .then(response => response.json())
+        // .then(data => console.log(data))
+        // .catch((error) => {
+        //     console.error('Error:', error);
+        // });
     }
-    localStorage.clear();
-    inventoryarray.forEach(element => {
-        if (inventoryarray[inventoryarray.length - 1] == element) {
-            if (localStorage.getItem("inventoryarray") == null) {
-                localStorage.setItem("inventoryarray", element);
-                console.log(1);
-            } else {
-                localStorage.setItem("inventoryarray",localStorage.getItem("inventoryarray") + element);
-                console.log(2);
-            }
-        } else {
-            if (localStorage.getItem("inventoryarray") == null) {
-                localStorage.setItem("inventoryarray", element + ";");
-                console.log(3);
-            } else {
-                localStorage.setItem("inventoryarray", localStorage.getItem("inventoryarray") + element + ";");
-                console.log(4);
-            }
-        }
-    });
-    console.log(localStorage.getItem("inventoryarray"));
 }
 try {
     document.getElementById("test").addEventListener("click", () => {
@@ -41,7 +34,6 @@ try {
 }catch(e){
     console.log(e);
 }
-// Function to remove an item from the inventoryarray
 function removeItem(name, code, item) {
     for (let i = 0; i < inventoryarray.length; i++) {
         if (inventoryarray[i][0] == name && inventoryarray[i][1] == code && inventoryarray[i][2] == item) {
@@ -61,7 +53,7 @@ try {
 }
 try {
     document.getElementById("test1").addEventListener("click", async () => {
-        const response = await fetch('/test');
+        let response = await fetch('/test');
         console.log(await response.json());
     });
 }catch(e){

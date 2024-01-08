@@ -6,6 +6,14 @@ module.exports = class Utstyr extends Model {
             name: {
                 type: DataTypes.STRING, 
                 defaultValue: "Sykkel"
+            },
+            code: {
+                type: DataTypes.STRING,
+                defaultValue: "1234"
+            },
+            item: {
+                type: DataTypes.STRING,
+                defaultValue: "Bremse"
             }
         },
         {
