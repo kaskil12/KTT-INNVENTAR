@@ -17,14 +17,18 @@ function addItem(name, code, item) {
         if (inventoryarray[inventoryarray.length - 1] == element) {
             if (localStorage.getItem("inventoryarray") == null) {
                 localStorage.setItem("inventoryarray", element);
+                console.log(1);
             } else {
                 localStorage.setItem("inventoryarray",localStorage.getItem("inventoryarray") + element);
+                console.log(2);
             }
         } else {
             if (localStorage.getItem("inventoryarray") == null) {
                 localStorage.setItem("inventoryarray", element + ";");
+                console.log(3);
             } else {
                 localStorage.setItem("inventoryarray", localStorage.getItem("inventoryarray") + element + ";");
+                console.log(4);
             }
         }
     });

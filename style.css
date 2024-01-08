@@ -1,8 +1,88 @@
 .ballepenis {
     display: flex;
     margin: 10px;
+    flex-grow: 1;
+    flex-basis: 350px;
+    gap: 10px;
+}
+.ballepenis .OwO,
+.ballepenis button {
+    width: 0;
+    display: block;
+    margin-top: 1px;
+    flex-grow: 1;
+}
+.ballepenis .OwO p{
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.bodyItemList {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.h1ItemList {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#itemList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    justify-content: start;
+    margin: 0 auto;
+    max-width: 1200px;
+    flex-flow: row wrap;
+}
+
+.ballepenis {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    margin: 10px;
+    width: calc(33.33% - 20px);
 }
 
 .OwO {
-    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+.bodyindex {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+.h2Index {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.formIndex {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.inputIndex[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
 }

@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Item List</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="reset.css">
+    <center><h2 class="h2Index">Item List</h2></center>
+    <button onclick="window.location.href = 'index.html';">Go to index.html</button>
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search for items..">
+
+    <script src="search.js"></script>
 </head>
-<body>
-    <h1>Item List</h1>
+<body class="bodyItemList">
     <div id="itemList"></div>
 
     <script src="Inventory.js"></script>
     <script src="displayItems.js"></script>
-
-    <button onclick="window.location.href = 'index.html';">Go to index.html</button>
 </body>
 </html>
