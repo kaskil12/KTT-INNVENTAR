@@ -7,21 +7,32 @@
     <title>Document</title>
 </head>
 <body class="bodyindex">
-    <h2 class="h2Index">Add Item</h2>
+    <h2 class="h2Index">Utlevering</h2>
     <form id="addItemForm" class="formIndex">
         <input class="inputIndex" type="text" id="addName" placeholder="Name">
         <input class="inputIndex" type="text" id="addCode" placeholder="Code">
         <input class="inputIndex" type="text" id="addItem" placeholder="Item">
-        <button class="buttonIndex" id="test" type="button">Add Item</button>
+        <button class="buttonIndex" id="test" type="button">Legg til</button>
     </form>
 
-    <h2 class="h2Index">Remove Item</h2>
+    <h2 class="h2Index">Innlevering</h2>
     <form id="removeItemForm" class="formIndex">
         <input class="inputIndex" type="text" id="removeCode" placeholder="Code">
-        <button class="buttonIndex" id="rmItem" type="button">Remove Item</button>
+        <button class="buttonIndex" id="rmItem" type="button">Fjærn</button>
     </form>
-
-    <button onclick="window.location.href = 'itemlist.html';">Open Item List</button>
+    <button class ="index-link" onclick="window.location.href = 'index.html';">Hjem</button>
+    <button class ="LagerButton" onclick="window.location.href = 'index.html';">Lager</button>
+    <button class="KatalogButton" onclick="window.location.href = 'itemlist.html';">Katalog</button>
     <script src="inventory.js"></script>
+    <footer>
+        <img src="\Images\Innlandet_fylkesvapen_RGB.png" alt="Your Image">
+        <div class="footer-text">
+            <p>Number: 123456789</p>
+            <p>Email: example@example.com</p>
+            <p>Address: 123 Street, City</p>
+            <p>Innlandet Fylke</p>
+            <p>Sjeft: Kasper</p>
+        </div>
+    </footer>
 </body>
 </html>
