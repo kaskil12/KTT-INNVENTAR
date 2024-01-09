@@ -1,10 +1,3 @@
-let inventoryarray = [];
-if (localStorage.getItem("inventoryarray") != null) {
-    let items = localStorage.getItem('inventoryarray').split(';');
-    items.forEach(item => {
-        inventoryarray.push(item.split(','));
-    });
-}
 
 async function addItem(name, code, item) {
     console.log(name, code, item);
@@ -34,27 +27,15 @@ try {
 }catch(e){
     console.log(e);
 }
-function removeItem(name, code, item) {
-    for (let i = 0; i < inventoryarray.length; i++) {
-        if (inventoryarray[i][0] == name && inventoryarray[i][1] == code && inventoryarray[i][2] == item) {
-            inventoryarray.splice(i, 1);
-            console.log(inventoryarray);
-            addItem("", "", "");
-            break;
-        }
-    }
+async function removeItem(code) {
+    let response = await fetch('/' + code);
+    console.log("2");
+    location.reload();
+    
 }
 try {
     document.getElementById("rmItem").addEventListener("click", () => {
-        removeItem(document.getElementById('removeName').value, document.getElementById('removeCode').value, document.getElementById('removeItem').value);
-    });
-}catch(e){
-    console.log(e);
-}
-try {
-    document.getElementById("test1").addEventListener("click", async () => {
-        let response = await fetch('/test');
-        console.log(await response.json());
+        removeItem(document.getElementById('removeCode').value);
     });
 }catch(e){
     console.log(e);

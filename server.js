@@ -16,8 +16,12 @@ app.get('/test', async (req, res) => {
   res.send(await Utstyr.findOne({where: {name : "Nigger"}, order: [ [ 'id', 'DESC' ]]}))
 })
 
+app.get('/getAll', async (req, res) => {
+  
+  res.send(await Utstyr.findAll())
+})
+
 app.post('/add', async (req, res) => {
-  console.log(req)
   Utstyr.create({
     name: req.body.name,
     code: req.body.code,
@@ -26,6 +30,10 @@ app.post('/add', async (req, res) => {
   res.send(await Utstyr.findOne({where: {name : req.body.name,}, order: [ [ 'id', 'DESC' ]]}))
 })
 
+app.get('/:code', async (req, res) =>{
+  await Utstyr.destroy({where: {code : req.params.code,}})
+  res.send("pikk")
+})  
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -5,15 +5,15 @@ module.exports = class Utstyr extends Model {
         return super.init({
             name: {
                 type: DataTypes.STRING, 
-                defaultValue: "Sykkel"
+                defaultValue: "Tom"
             },
             code: {
                 type: DataTypes.STRING,
-                defaultValue: "1234"
+                defaultValue: "Tom"
             },
             item: {
                 type: DataTypes.STRING,
-                defaultValue: "Bremse"
+                defaultValue: "Tom"
             }
         },
         {
