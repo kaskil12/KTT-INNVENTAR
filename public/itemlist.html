@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
     <center><h2 class="h2Index">Item List</h2></center>
-    <button class ="index-link" onclick="window.location.href = 'index.html';">Hjem</button>
     <input class="SearchBar" type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search for items..">
 
     <script src="search.js"></script>
 </head>
 <body class="bodyItemList">
+    <button class ="index-link" onclick="window.location.href = 'index.html';">Hjem</button>
+    <button class ="LagerButton" onclick="window.location.href = 'index.html';">Lager</button>
+    <button class="KatalogButton" onclick="window.location.href = 'itemlist.html';">Katalog</button>
+    <img id="logo" src="Images\Innlandet_fylkeskommune_liggende_pos_RGB.png" alt="Logo">
     <div id="itemList"></div>
 
     <script src="Inventory.js"></script>
