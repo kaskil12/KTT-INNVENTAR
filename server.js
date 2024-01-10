@@ -8,13 +8,7 @@ Utstyr.sync({force: true});
 
 app.use(express.json());
 app.use(express.static('public'))
- 
-app.get('/test', async (req, res) => {
-  Utstyr.create({
-    name: "Nigger",
-  });
-  res.send(await Utstyr.findOne({where: {name : "Nigger"}, order: [ [ 'id', 'DESC' ]]}))
-})
+
 
 app.get('/getAll', async (req, res) => {
   
