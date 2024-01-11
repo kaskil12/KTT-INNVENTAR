@@ -14,6 +14,10 @@ module.exports = class Utstyr extends Model {
             item: {
                 type: DataTypes.STRING,
                 defaultValue: "Tom"
+            },
+            utlånt: {
+                type: DataTypes.BOOLEAN,
+                defaultValue: false
             }
         },
         {

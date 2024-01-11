@@ -17,16 +17,28 @@ app.get('/getAll', async (req, res) => {
 
 app.post('/add', async (req, res) => {
   Utstyr.create({
-    name: req.body.name,
     code: req.body.code,
     item: req.body.item
   });
-  res.send(await Utstyr.findOne({where: {name : req.body.name,}, order: [ [ 'id', 'DESC' ]]}))
+  res.send(await Utstyr.findOne({where: {code : req.body.code,}, order: [ [ 'id', 'DESC' ]]}))
+})
+
+app.get('/loanOut/:id/:name', async (req, res) => {
+  await Utstyr.update({utlånt: true}, {where: {id : req.params.id}})
+  await Utstyr.update({name: req.params.name}, {where: {id : req.params.id}})
+  console.log("Vetle var her :P")
+  res.send({status: "okidoki"})
+})
+
+app.get('/getIn/:id', async (req, res) => {
+  await Utstyr.update({utlånt: false}, {where: {id : req.params.id}})
+  await Utstyr.update({name: "Tom bombadil"}, {where: {id : req.params.id}})
+  res.send({status: "okidoki"})
 })
 
 app.get('/:code', async (req, res) =>{
   await Utstyr.destroy({where: {code : req.params.code,}})
-  res.send("Kode")
+  res.send("Kult")
 })  
 
 app.listen(port, () => {

@@ -1,14 +1,12 @@
-
-async function addItem(name, code, item) {
-    console.log(name, code, item);
-    if (name != "" && code != "" && item != "") {
+async function addItem(code, item) {
+    console.log(code, item);
+    if (code != "" && item != "") {
         let cum = await fetch('/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                name: name,
                 code: code,
                 item: item
             }),
@@ -22,7 +20,7 @@ async function addItem(name, code, item) {
 }
 try {
     document.getElementById("test").addEventListener("click", () => {
-        addItem(document.getElementById('addName').value, document.getElementById('addCode').value, document.getElementById('addItem').value);
+        addItem(document.getElementById('addCode').value, document.getElementById('addItem').value);
     });
 }catch(e){
     console.log(e);
@@ -39,4 +37,19 @@ try {
     });
 }catch(e){
     console.log(e);
+}
+
+async function lånUt() {
+    let name = document.getElementById('addName').value
+    let id = document.getElementById("id").value
+    let response = await fetch('/loanOut/' + id + "/" + name);
+    response = await response.json();
+    console.log(response);
+}
+
+async function fåInn() {
+    let id = document.getElementById("id2").value
+    let response = await fetch('/getIn/' + id);
+    response = await response.json();
+    console.log(response);
 }

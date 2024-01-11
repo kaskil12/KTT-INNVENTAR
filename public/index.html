@@ -8,15 +8,20 @@
 </head>
 <body class="bodyindex">
     <img id="logo" src="Images\Innlandet_fylkeskommune_liggende_pos_RGB.png" alt="Logo">
-    <h2 class="h2Index">Utlevering</h2>
+    <h2 class="h2Index">Utlån</h2>
     <form id="addItemForm" class="formIndex">
-        <input class="inputIndex" type="text" id="addName" placeholder="Navn">
         <input class="inputIndex" type="text" id="addCode" placeholder="Kode">
         <input class="inputIndex" type="text" id="addItem" placeholder="Gjenstand">
         <button class="buttonIndex" id="test" type="button">Legg til</button>
     </form>
 
-    <h2 class="h2Index">Innlevering</h2>
+    <input class="inputIndex" type="text" id="addName" placeholder="Name">
+    <input class="inputIndex" type="number" id="id" placeholder="id">
+    <button onclick="lånUt()" type="button">Lån ut</button>
+    <input class="inputIndex" type="number" id="id2" placeholder="id">
+    <button onclick="fåInn()" type="button">Få tilbake</button>
+
+    <h2 class="h2Index">Fjærn Gjenstander</h2>
     <form id="removeItemForm" class="formIndex">
         <input class="inputIndex" type="text" id="removeCode" placeholder="Kode">
         <button class="buttonIndex" id="rmItem" type="button">Fjærn</button>
@@ -32,7 +37,7 @@
             <p>Email: kasperkilde2@gamil.com</p>
             <p>Adresse: 13 Tranebærvegen, Elverum</p>
             <p>Innlandet Fylke</p>
-            <p>Sjef: Kasper</p>
+            <p>Sjeft: Kasper</p>
         </div>
     </footer>
 </body>
