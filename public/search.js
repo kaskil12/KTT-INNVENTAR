@@ -1,7 +1,7 @@
 function searchFunction() {
     let input = document.getElementById('searchInput').value;
     input = input.toLowerCase();
-    let x = document.getElementsByClassName('ballepenis');
+    let x = document.getElementsByClassName('Boxes');
 
     for (i = 0; i < x.length; i++) { 
         let itemArray = x[i].innerText.split('\n');

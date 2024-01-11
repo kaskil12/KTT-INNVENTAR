@@ -26,7 +26,7 @@ app.post('/add', async (req, res) => {
 
 app.get('/:code', async (req, res) =>{
   await Utstyr.destroy({where: {code : req.params.code,}})
-  res.send("pikk")
+  res.send("Kode")
 })  
 
 app.listen(port, () => {

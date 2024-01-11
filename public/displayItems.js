@@ -7,11 +7,11 @@ window.onload = async function() {
     response.forEach((item, index) => {
         let itemArray = Object.values(item);
         let itemElement = document.createElement('div');
-        itemElement.classList.add('ballepenis');
+        itemElement.classList.add('Boxes');
         let html = 
-        `<div class="OwO"><p>Navn</p><p>${itemArray[1]}</p></div>
-        <div class="OwO"><p>StrekKode</p><p>${itemArray[2]}</p></div>
-        <div class="OwO"><p>Gjenstand</p><p>${itemArray[3]}</p></div>
+        `<div class="BoxInnhold"><p>Navn</p><p>${itemArray[1]}</p></div>
+        <div class="BoxInnhold"><p>StrekKode</p><p>${itemArray[2]}</p></div>
+        <div class="BoxInnhold"><p>Gjenstand</p><p>${itemArray[3]}</p></div>
         <button id="button${index}"></button>`;
     
 
@@ -20,7 +20,7 @@ window.onload = async function() {
         itemListDiv.appendChild(itemElement);            
         
         let removeButton = document.getElementById(`button${index}`);
-        removeButton.innerHTML = 'Remove';
+        removeButton.innerHTML = 'Fjærn';
         console.log(removeButton);
         removeButton.addEventListener('click', async function() {
             console.log("Click remove")
