@@ -1,7 +1,7 @@
 async function addItem(code, item) {
     console.log(code, item);
     if (code != "" && item != "") {
-        let cum = await fetch('/add', {
+        let come = await fetch('/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

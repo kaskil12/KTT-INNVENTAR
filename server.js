@@ -26,7 +26,6 @@ app.post('/add', async (req, res) => {
 app.get('/loanOut/:id/:name', async (req, res) => {
   await Utstyr.update({utlånt: true}, {where: {id : req.params.id}})
   await Utstyr.update({name: req.params.name}, {where: {id : req.params.id}})
-  console.log("Vetle var her :P")
   res.send({status: "okidoki"})
 })
 
